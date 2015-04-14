@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#
 
 URL="http://mbp.wfoo.net:8081/openam"
 AUTHN="${URL}/identity/authenticate"
