@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This script creates a backend on OpenDJ
 
 ./setup -i -n -b "dc=example,dc=com" -a -h `uname -n` -p 1389 --adminConnectorPort 4444 -D "cn=Directory Manager" -w "secret12" -q -Z 1636 --generateSelfSignedCertificate
 
