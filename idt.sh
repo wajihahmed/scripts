@@ -1,0 +1,8 @@
+#!/bin/sh
+
+IDT="eyAidHlwIjogIkpXVCIsICJhbGciOiAiUlMyNTYiLCAia2lkIjogIjYxODJhZTg5LWUzMjItNDg2Yi05N2QwLTdjNTdiNGM3ODA1MSIgfQ.eyAidG9rZW5OYW1lIjogImlkX3Rva2VuIiwgImF6cCI6ICJtb2JpbGUiLCAic3ViIjogImFtYWRtaW4iLCAiYXRfaGFzaCI6ICIzZ2dtbXZ4bVI5YUpfZ3YxNmVqRUJRIiwgImlzcyI6ICJlYzItNTQtMTkzLTQxLTcxLnVzLXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20iLCAib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6ICIzMjk1YzcwZi1lMjg5LTRhN2YtODc4NS02MmZiNjMyZGY4MzciLCAiaWF0IjogMTQyMzcwOTk5NCwgImF1dGhfdGltZSI6IDE0MjM3MDk5OTQsICJleHAiOiAxNDIzNzEwNTk0LCAidG9rZW5UeXBlIjogIkpXVFRva2VuIiwgInJlYWxtIjogIi8iLCAiYXVkIjogWyAibW9iaWxlIiBdLCAiY19oYXNoIjogIk95Umk2Y3ZTQVRTM3FYejg4S1JBS0EiIH0.fwqvFVUS2VTWfQxDKR0x2rcOJ15Wkk5xirHxy24WP_4_ZIogLdpP-qY-YDlFYyoqUwUvEMONuFwwD1FZkvsI1GZ6wMGGwv3GroMcmfTaDBVob_r82AK-Nz_kgwqGQOPAXxdgXNnQlrHHGAFdkXu-CaeGnkgGrgD8ITc-B58opmM"
+
+echo $IDT | cut -f1 -d.  | /usr/bin/base64 -D ; echo ""
+echo ""
+echo "=> OIDC ID Token JWT (decoded) Payload: "
+echo $IDT | cut -f2 -d.  | /usr/bin/base64 -D ; echo ""
