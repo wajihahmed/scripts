@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Author: wajih.ahmed@forgerock.com
+
 FILES=/Users/wahmed/sandbox/openam/openam/debug/*
 
 
