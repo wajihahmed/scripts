@@ -1,6 +1,8 @@
 #!/bin/sh
 
-URL="http://mbp.wfoo.net:8081/openam"
+# Author: wajih.ahmed@forgerock.com
+
+="http://mbp.wfoo.net:8081/openam"
 #URL="http://mbp.wfoo.net:8080/openam"
 
 
