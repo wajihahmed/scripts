@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script sets up replication between two DJ instances
+
 H1=`uname -n`
 H2=$H1
 P1=1389
