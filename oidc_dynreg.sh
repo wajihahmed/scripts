@@ -35,7 +35,7 @@ curl --request POST \
 	"jwks_uri": "https://client.example.org/my_public_keys.jwks", \
 	"userinfo_encrypted_response_alg": "RSA1_5", \
 	"userinfo_encrypted_response_enc": "A128CBC-HS256", \
-	"contacts": ["wajih.ahmed@forgerock.com"], \
+	"contacts": ["wajih.ahmed@fr.com"], \
 	"request_uris": ["https://client.example.org/rf.txt"] \
     }" ${REG}
 
