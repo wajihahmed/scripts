@@ -10,7 +10,7 @@ O2="${AMURL}/oauth2"
 O2CI="mobile"
 O2CS="password"
 REDURI="http://openam.example.com:8080/oauth2/oauth2.htm" # OAuth 2 Client Redirection URI space delimited
-DISCO=`curl -s -k ${AMURL}/.well-known/openid-configuration?realm=${REALM}` # use \$O2 for nightly
+DISCO=`curl -s -k ${AMURL}/.well-known/openid-configuration?realm=${REALM}` # use \$O2 instead of $AMURL for nightly build 
 USERNAME="demo"
 PASSWD="changeit"
 
