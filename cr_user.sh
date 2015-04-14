@@ -1,4 +1,5 @@
 #!/bin/sh
+#
 
 curl \
  --header "X-OpenIDM-Username: openidm-admin" \
