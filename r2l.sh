@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Author: wajih.ahmed@forgerock.com
+
 # This script will work only if the auth filter is using "method" : "simple"
 
 URL=http://mbp.wfoo.net:5080/r2l
