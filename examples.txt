@@ -1,4 +1,0 @@
-
-description=`echo $response | sed -e 's/^.*"description"[ ]*:[ ]*"//' -e 's/".*//'`
-summary=`echo $response | sed -e 's/^.*"summary"[ ]*:[ ]*"//' -e 's/".*//'`
-                                          
