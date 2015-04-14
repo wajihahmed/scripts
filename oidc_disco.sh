@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Discover OIDC well-known endpoint
+
 echo ""
 curl http://mbp.wfoo.net:8080/openam/.well-known/openid-configuration?realm=/
 
