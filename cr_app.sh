@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Author: wajih.ahmed
-# This script only works with latest night build of OpenAM 13
+# This script only works with latest nightly build of OpenAM 13
 # This scipts adds custom resource types, an application adn then associated policies
 
 
