@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Author: wajih.ahmed@forgerock.com
+FILES=*
 
-FILES=/Users/wahmed/sandbox/openam/openam/debug/*
+P=`pwd`
+B=`basename $P`
 
-
-for f in $FILES
-do
+if [ "$B" = "debug" ]; then
+ for f in $FILES
+ do
 	cp /dev/null $f
-done
+ done
+fi

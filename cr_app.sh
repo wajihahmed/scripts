@@ -1,6 +1,9 @@
 #!/bin/sh
 
-# Author: wajih.ahmed@forgerock.com
+# Author: wajih.ahmed
+# This script only works with latest night build of OpenAM 13
+# This scipts adds custom resource types, an application adn then associated policies
+
 
 URL="http://mbp.wfoo.net:8081/openam"
 AUTHN="${URL}/identity/authenticate"
@@ -21,7 +24,6 @@ RT=`curl "${URL}/json/resourcetypes?_action=create" \
 --cookie "iPlanetDirectoryPro=${TOK}" \
 --header 'Content-Type: application/json' \
 --data '{
-    "realm":"/",
     "patterns":["book/screen","book/screen/tab","book/screen/button","book/reports","book/dashboard"],
     "actions": {
         "approve": false,
@@ -82,9 +84,25 @@ curl "${URL}/json/policies/Trader" -X PUT \
     "actionValues": {
         "book":true,
         "view":true
-    }
+    },
+    "resourceAttributes": [
+        {
+            "type": "User",
+            "propertyName": "cn",
+            "propertyValues": [
+            ]
+        },
+        {
+            "type": "Static",
+            "propertyName": "attr1",
+            "propertyValues": [
+                "one"
+            ]
+        }
+    ]
 }'
 
 echo ""
+
 
 # '{"name":"Trader","active":true,"description":"","resources":["book/screen","book/screen/button","book/screen/tab"],"applicationName":"Quick Trade","actionValues":{"book":true,"view":true},"subject":{"type":"AND","subjects":[{"type":"JwtClaim","claimName":"sub","claimValue":"trader joe"}]},"resourceTypeUuid":"337bf803-a9d0-4843-81f8-b4176a5d720e","actions":{"book":true,"view":true},"resourceAttributes":[]}'
