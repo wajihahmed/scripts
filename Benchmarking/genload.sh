@@ -14,14 +14,13 @@ export OPENDJ_JAVA_ARGS="-Xmx2g -Xms2g"
 
 if [ $H = "m1" ]
 then
- IP=192.99.200.182
- #IP=10.0.50.1
+ IP=192.168.100.21
 elif [ $H = "s2" ]
 then
- IP=167.114.173.77
+ IP=192.168.100.22
 elif [ $H = "m2" ]
 then
- IP=167.114.174.72
+ IP=192.168.100.23
 else
  IP=localhost
 fi
