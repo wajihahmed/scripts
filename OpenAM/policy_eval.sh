@@ -1,17 +1,16 @@
 #!/bin/sh
 
-# Author: wajih.ahmed@forgerock.com
-
 URL="http://mbp.wfoo.net:8081/openam"
-AUTHN="${URL}/identity/authenticate"
+AUTHN="${URL}/json/authenticate"
 
-TOK=`curl -s -k --request POST --data "username=amadmin&password=Admin123" $AUTHN | cut -f2 -d=`
-SUBTOK=`curl -s -k --request POST --data "username=demo&password=changeit" $AUTHN | cut -f2 -d=`
+
+TOK=`curl -s -k --request POST --header "X-OpenAM-Username: amadmin" --header "X-OpenAM-Password: Admin123" --header "Content-Type: application/json" --data "{}" $AUTHN | cut -f2 -d: | cut -f1 -d, | sed -e 's/"//g'` 
+SUBTOK=`curl -s -k --request POST --header "X-OpenAM-Username: demo" --header "X-OpenAM-Password: changeit" --header "Content-Type: application/json" --data "{}" $AUTHN | cut -f2 -d: | cut -f1 -d, | sed -e 's/"//g'` 
 
 echo "=> OpenAM Token: ${TOK}" ; echo ""
 echo "=> Subject Token: ${SUBTOK}" ; echo ""
 
-curl ${URL}/json/policies?_action=evaluate \
+curl ${URL}/json/policies?_action=evaluate\&_prettyPrint=true \
 --request POST \
 --cookie "iPlanetDirectoryPro=${TOK}" \
 --header "Content-Type: application/json" \
@@ -20,8 +19,7 @@ curl ${URL}/json/policies?_action=evaluate \
         "ssoToken": "'"${SUBTOK}"'"
     },
     "resources": [
-        "book/screen",
-        "book/reports"
+        "amount"
     ],
     "application": "Quick Trade"
 }'
