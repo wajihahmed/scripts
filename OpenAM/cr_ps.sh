@@ -79,6 +79,10 @@ curl "${URL}/json/policies/Trader" -X PUT \
         "type": "LDAPFilter",
         "ldapFilter": "postalAddress=USA"
     },
+    "condition": {
+	"type":"Script",
+	"scriptId":"289cf6b8-e3dc-4fa1-b895-e0e98c6ce2bb"
+    },
     "name": "Trader",
     "description": "",
     "actionValues": {
